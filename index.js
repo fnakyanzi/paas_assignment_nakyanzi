@@ -34,7 +34,7 @@ async function initDb() {
 }
 
 // Health check endpoint
-app.get('/', (req, res) => {
+app.get('/task manager ', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
 });
 
