@@ -5,8 +5,7 @@ import os
 app = Flask(__name__)
 
 def get_db_connection():
-   url = os.getenv("DATABASE_URL")
-   
+    url = os.getenv("DATABASE_URL")  
     if url.startswith("postgres://"):
         url = url.replace("postgres://", "postgresql://", 1)
     return psycopg2.connect(url)
