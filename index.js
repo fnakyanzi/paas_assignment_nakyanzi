@@ -159,6 +159,17 @@ app.delete('/tasks/:id', async (req, res) => {
   }
 });
 
+
+// A simple route to test if our variables are working
+app.get('/test-env', (req, res) => {
+    const version = process.env.APP_VERSION;
+    if (!version) {
+        console.error("ERROR: APP_VERSION is missing from Railway Variables!");
+        return res.status(500).send("Error: App configuration is incomplete.");
+    }
+    res.send(`App is running Version: ${version}`);
+});
+
 // ── Start ────────────────────────────────────────────────────────────────────
 
 initDb()
