@@ -158,8 +158,6 @@ app.delete('/tasks/:id', async (req, res) => {
     res.status(500).json({ status: 'error', message: err.message });
   }
 });
-
-
 // A simple route to test if our variables are working
 app.get('/test-env', (req, res) => {
     const version = process.env.APP_VERSION;
@@ -169,7 +167,6 @@ app.get('/test-env', (req, res) => {
     }
     res.send(`App is running Version: ${version}`);
 });
-
 // ── Start ────────────────────────────────────────────────────────────────────
 
 initDb()
